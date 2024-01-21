@@ -1,0 +1,105 @@
+{% extends '../base.html' %}
+{% block content %}
+{% block title %}
+Login to Talkbook
+{% endblock title %}
+ <!-- Bootstrap Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Talkbook</a>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row center-vertically">
+        <!-- Left Part - Description -->
+        <div class="col-md-6 pt-5">
+            <div class="text-center">
+                <h1>Welcome to Talkbook</h1>
+                <h4>Connect with friends and the world around you on talkbook.</h4>
+            </div>
+        </div>
+        <!-- Right Part - Signup Form -->
+        <div class="col-md-6">
+                <div class="card login-card">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <input type="email" class="form-control form-control-lg" id="email" placeholder="Email address or phone number" autocomplete required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <a href="{% url 'forgotPassword' %}">Forgotten password?</a>
+                    </div>
+                    <hr>
+                    <div class="d-grid px-5">
+                         <!-- Button to Open the Modal -->
+                        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Create new account</button>
+                   
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="modal-title">Sign Up</h3>
+          <p type="button" class="close btn btn-lg" data-dismiss="modal"><i class="fa fa-close"> </i></p>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            
+            <div class="form-group d-flex mb-3">
+                <input type="text" class="form-control me-2" id="firstName" placeholder="First Name" autocomplete="off">
+                <input type="text" class="form-control" id="Surname" placeholder="Last Name" autocomplete="off">
+            </div>
+            <div class="form-group mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Email" autocomplete="off">
+            </div>
+            <div class="form-group  mb-3">
+                <input type="password" class="form-control" id="password" placeholder="New Password" autocomplete="off">
+            </div>
+            <div class="form-group mb-3">
+                <label>
+                    Date of Birth
+       
+                  </label>
+         <input type="date" class="form-control" id="password" placeholder="Date of Birth">                
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label class="me-2">
+                    Gender
+       
+                  </label>
+                <div class="me-2"><input type="radio" name="gender" value="male" class="me-2" checked> Male</div>
+                <div class="me-2"><input type="radio" name="gender" value="female" class="me-2">Female</div>
+            
+            </div>
+
+            <p>People who use our service may have uploaded your contact information to Talkbook. <a href="#">Learn more</a></p>
+            
+              <div class="d-grid px-5">
+                <!-- Button to Open the Modal -->          
+          <button type="submit" class="btn btn-primary btn-block">Sign Up</button></div>
+        </form>
+        </div> 
+      </div>
+    </div>
+  </div>               
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
