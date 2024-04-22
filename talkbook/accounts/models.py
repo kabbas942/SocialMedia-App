@@ -35,10 +35,10 @@ class Profile(models.Model):
         super().save(*args, **kwargs)
     
     def getAllFriends(self):
-        return self.friends.all()
+        return None if self.friends.all().count()==0 else self.friends.all()
     
     def getCountFriends(self):
-        return self.friends.all().count()
+        return 0 if self.friends.all().count()==0 else self.friends.all().count()
 
 statusChoice =(('send','send'),('Accepted','Accepted'))
 class Relationship(models.Model):
