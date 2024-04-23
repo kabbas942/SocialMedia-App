@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse
 from accounts.models import Profile
+from accounts.modelForm import profileForm
 
 # Create your views here.
 def userLogin(request):
@@ -19,5 +20,5 @@ def createAccount(request):
 
 def profileMainPage(request):
     profileData = Profile.objects.get(user=request.user)
-    context={'profileData':profileData}
+    context={'profileData':profileData,'profileForm':profileForm()}
     return render(request,"accounts/profile.html",context)
