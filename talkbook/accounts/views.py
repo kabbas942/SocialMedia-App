@@ -20,5 +20,12 @@ def createAccount(request):
 
 def profileMainPage(request):
     profileData = Profile.objects.get(user=request.user)
-    context={'profileData':profileData,'profileForm':profileForm()}
+    form =profileForm(request.POST or None, request.FILES or None, instance=profileData)
+    if request.method=='POST':
+        if form.is_valid():
+            form.save()
+            
+
+
+    context={'profileData':profileData,'profileForm':form}
     return render(request,"accounts/profile.html",context)

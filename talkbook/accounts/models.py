@@ -11,7 +11,7 @@ class Profile(models.Model):
     bio = models.TextField(default="no bio ...",max_length=400)
     email = models.EmailField(max_length=200,blank=True)
     country = models.CharField(max_length=200, blank=True)
-    avatar = models.ImageField(default="avatar.png",upload_to='avatar/')
+    avatar = models.ImageField(upload_to="avatar")
     friends=models.ManyToManyField(User, blank=True, related_name="friends")
     slug = models.SlugField(unique=True,blank=True)
     created = models.DateTimeField(auto_now_add = True)
