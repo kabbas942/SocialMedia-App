@@ -15,7 +15,6 @@ Login to Talkbook
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
-                <a href=""><i class="fa fa-edit"></i></a>
                   <div class="d-flex flex-column align-items-center text-center">
                     
                     <img src="{{profileData.avatar.url}}" alt="Admin" class="rounded-circle" width="150">
@@ -23,7 +22,7 @@ Login to Talkbook
                       <h4>{{profileData.firstName}} {{profileData.lastName}}</h4>
                       <p class="text-secondary mb-1">{{profileData.bio}}</p>
                       <p class="text-muted font-size-sm">{{profileData.email}}</p>
-
+                      <button class="btn btn-sm btn-dark"><i class="fa fa-edit"></i>Edit Profile</button>
                       <button class="btn btn-sm btn-primary"><i class="fa fa-user-plus"></i> Friend</button>
                       <button class="btn btn-sm btn-dark"><i class="fa fa-envelope"></i> Message</button>
                     </div>
@@ -90,8 +89,10 @@ Login to Talkbook
                                         </div>
                                         <p>Best vacation of 2023</p>
                     
-<form class="ui form">                                      
-{{profileForm.as_p}}
+<form class="ui form" method="post" action="" enctype="multipart/form-data">                                        
+{% csrf_token %}
+  {{profileForm.as_p}}
+<button type="submit" name="" id="" class="btn btn-primary" btn-lg btn-block">Submiy</button>
 </form>
                                         
                                        
