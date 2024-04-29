@@ -12,135 +12,37 @@ Login to Talkbook
 <div class="container py-5">
     <div class="main-body">
         <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    
-                    <img src="{{profileData.avatar.url}}" alt="Admin" class="rounded-circle" width="150">
-                    <div class="mt-3">
-                      <h4>{{profileData.firstName}} {{profileData.lastName}}</h4>
-                      <p class="text-secondary mb-1">{{profileData.bio}}</p>
-                      <p class="text-muted font-size-sm">{{profileData.email}}</p>
-                      <button class="btn btn-sm btn-dark"><i class="fa fa-edit"></i>Edit Profile</button>
-                      <button class="btn btn-sm btn-primary"><i class="fa fa-user-plus"></i> Friend</button>
-                      <button class="btn btn-sm btn-dark"><i class="fa fa-envelope"></i> Message</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mt-3">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    
-                    <span class="text-secondary">Photos</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="card mt-3">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    
-                    <span class="text-secondary">Friends ({{profileData.getCountFriends}})</span>
-                    {{profileData.getAllFriends}}
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                    Create new Post
-                    <section class="panel  timeline-post-to">
-                        <div class="panel-body">
-                            <form role="form">
-                                <textarea class="form-control" placeholder="What's on your mind?"></textarea>
-                                
-                                <div class="row py-2">
-                                    <div class="col-sm-6 d-flex justify-content-start">
-                                        <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
-                                        <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
-                                        <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
-                                    </div>
-                                    <div class="col-sm-6 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary">Post</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </section> 
-                </div>
-              </div>
-
-              <div class="row gutters-sm">
-                <div class="col-sm-12 mb-3">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="50" class="rounded-circle" /></a>
-                                            <div class="flex-fill ps-2">
-                                                <div class="fw-bold"><a href="#" class="text-decoration-none">Clyde Stanley</a> at <a href="#" class="text-decoration-none">South Lake Tahoe, California</a></div>
-                                                <div class="small text-body text-opacity-50">March 16</div>
-                                            </div>
-                                        </div>
-                                        <p>Best vacation of 2023</p>
-                    
-<form class="ui form" method="post" action="" enctype="multipart/form-data">                                        
-{% csrf_token %}
-  {{profileForm.as_p}}
-<button type="submit" name="" id="" class="btn btn-primary" btn-lg btn-block">Submiy</button>
-</form>
-                                        
-                                       
-                                        <hr class="mb-1 opacity-1" />
-                    
-                                        <div class="row text-center fw-bold">
-                                            <div class="col">
-                                                <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-thumbs-up me-1 d-block d-sm-inline"></i> Likes </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-comment me-1 d-block d-sm-inline"></i> Comment </a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="fa fa-share me-1 d-block d-sm-inline"></i> Share </a>
-                                            </div>
-                                        </div>
-                                        <hr class="mb-3 mt-1 opacity-1" />
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="35" class="rounded-circle" />
-                                            <div class="flex-fill ps-2">
-                                                <div class="position-relative d-flex align-items-center">
-                                                    <input type="text" class="form-control rounded-pill bg-white bg-opacity-15" style="padding-right: 120px;" placeholder="Write a comment..." />
-                                                    <div class="position-absolute end-0 text-center">
-                                                        <a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-smile"></i></a>
-                                                        <a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-camera"></i></a>
-                                                        <a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-video"></i></a>
-                                                        <a href="#" class="text-body text-opacity-50 me-3"><i class="fa fa-paw"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                        </div>
-                    
-                </div>
-
-              </div>
-
-
-
-            </div>
-          </div>
-
+        {% include "./Components/sidebar.html" %}
+        {% include "./Components/post.html" %}
         </div>
     </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal w-100" id="editProfile">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Profile Update</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form class="ui form" method="post" action="" enctype="multipart/form-data">                                        
+          {% csrf_token %}
+          {{profileForm.as_p}}
+          <button type="submit" name="" id="" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 {% endblock content %}
 
 
