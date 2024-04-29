@@ -5,4 +5,5 @@ urlpatterns = [
     path('forgotPassword',views.forgotPassword,name="forgotPassword"),
     path('createAccount',views.createAccount,name="createAccount"),
     path('profile',views.profileMainPage,name="profileMainPage"),
+    path('profilelist',views.profileListView.as_view(),name="profileListView"),
 ]
